@@ -1,0 +1,54 @@
+======================================================================
+  COMPILER LISTING  :  test_errors.pas
+======================================================================
+
+   1  |  ! Program with intentional errors for testing
+   2  |  program errorTest;
+   3  |  
+   4  |  var
+   5  |      x : integer;
+   6  |      y : integer;
+   7  |  
+   8  |  begin
+   9  |      x := 10;
+  10  |      y := ;
+      ***  Syntax Error: Unexpected token ';' in expression
+  11  |      write(x + y)
+      ***  Syntax Error: Expected 'end' but got 'write'
+      ***  Syntax Error: Expected 'EOF' but got 'write'
+  12  |  end.
+
+======================================================================
+  Compilation FAILED  –  3 error(s) found.
+======================================================================
+
+──── TOKEN LIST ────
+  Token(RESERVED, 'program', line=2)
+  Token(ID, 'errorTest', line=2)
+  Token(DELIMITER, ';', line=2)
+  Token(RESERVED, 'var', line=4)
+  Token(ID, 'x', line=5)
+  Token(DELIMITER, ':', line=5)
+  Token(RESERVED, 'integer', line=5)
+  Token(DELIMITER, ';', line=5)
+  Token(ID, 'y', line=6)
+  Token(DELIMITER, ':', line=6)
+  Token(RESERVED, 'integer', line=6)
+  Token(DELIMITER, ';', line=6)
+  Token(RESERVED, 'begin', line=8)
+  Token(ID, 'x', line=9)
+  Token(ASSIGNOP, ':=', line=9)
+  Token(INTEGER, 10, line=9)
+  Token(DELIMITER, ';', line=9)
+  Token(ID, 'y', line=10)
+  Token(ASSIGNOP, ':=', line=10)
+  Token(DELIMITER, ';', line=10)
+  Token(RESERVED, 'write', line=11)
+  Token(DELIMITER, '(', line=11)
+  Token(ID, 'x', line=11)
+  Token(ADDOP, '+', line=11)
+  Token(ID, 'y', line=11)
+  Token(DELIMITER, ')', line=11)
+  Token(RESERVED, 'end', line=12)
+  Token(DELIMITER, '.', line=12)
+  Token(EOF, 'EOF', line=13)

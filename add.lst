@@ -1,0 +1,95 @@
+======================================================================
+  COMPILER LISTING  :  add.pas
+======================================================================
+
+   1  |  ! Add two numbers
+   2  |  program addNumbers;
+   3  |  
+   4  |  var
+   5  |      a : integer;
+   6  |      b : integer;
+   7  |      sum : integer;
+   8  |  
+   9  |  begin
+  10  |      write('Enter first number: ');
+  11  |      read(a);
+  12  |      write('Enter second number: ');
+  13  |      read(b);
+  14  |      sum := a + b;
+  15  |      write('Sum = ');
+  16  |      write(sum)
+  17  |  end.
+
+======================================================================
+  Compilation SUCCESSFUL  –  No errors.
+======================================================================
+
+──── TOKEN LIST ────
+  Token(RESERVED, 'program', line=2)
+  Token(ID, 'addNumbers', line=2)
+  Token(DELIMITER, ';', line=2)
+  Token(RESERVED, 'var', line=4)
+  Token(ID, 'a', line=5)
+  Token(DELIMITER, ':', line=5)
+  Token(RESERVED, 'integer', line=5)
+  Token(DELIMITER, ';', line=5)
+  Token(ID, 'b', line=6)
+  Token(DELIMITER, ':', line=6)
+  Token(RESERVED, 'integer', line=6)
+  Token(DELIMITER, ';', line=6)
+  Token(ID, 'sum', line=7)
+  Token(DELIMITER, ':', line=7)
+  Token(RESERVED, 'integer', line=7)
+  Token(DELIMITER, ';', line=7)
+  Token(RESERVED, 'begin', line=9)
+  Token(RESERVED, 'write', line=10)
+  Token(DELIMITER, '(', line=10)
+  Token(STRING, 'Enter first number: ', line=10)
+  Token(DELIMITER, ')', line=10)
+  Token(DELIMITER, ';', line=10)
+  Token(RESERVED, 'read', line=11)
+  Token(DELIMITER, '(', line=11)
+  Token(ID, 'a', line=11)
+  Token(DELIMITER, ')', line=11)
+  Token(DELIMITER, ';', line=11)
+  Token(RESERVED, 'write', line=12)
+  Token(DELIMITER, '(', line=12)
+  Token(STRING, 'Enter second number: ', line=12)
+  Token(DELIMITER, ')', line=12)
+  Token(DELIMITER, ';', line=12)
+  Token(RESERVED, 'read', line=13)
+  Token(DELIMITER, '(', line=13)
+  Token(ID, 'b', line=13)
+  Token(DELIMITER, ')', line=13)
+  Token(DELIMITER, ';', line=13)
+  Token(ID, 'sum', line=14)
+  Token(ASSIGNOP, ':=', line=14)
+  Token(ID, 'a', line=14)
+  Token(ADDOP, '+', line=14)
+  Token(ID, 'b', line=14)
+  Token(DELIMITER, ';', line=14)
+  Token(RESERVED, 'write', line=15)
+  Token(DELIMITER, '(', line=15)
+  Token(STRING, 'Sum = ', line=15)
+  Token(DELIMITER, ')', line=15)
+  Token(DELIMITER, ';', line=15)
+  Token(RESERVED, 'write', line=16)
+  Token(DELIMITER, '(', line=16)
+  Token(ID, 'sum', line=16)
+  Token(DELIMITER, ')', line=16)
+  Token(RESERVED, 'end', line=17)
+  Token(DELIMITER, '.', line=17)
+  Token(EOF, 'EOF', line=18)
+
+──── INTERMEDIATE CODE (TAC) ────
+program_addNumbers:
+main:
+    WRITE 'Enter first number: '
+    READ a
+    WRITE 'Enter second number: '
+    READ b
+    t1 = a + b
+    sum = t1
+    WRITE 'Sum = '
+    WRITE sum
+    RETURN 

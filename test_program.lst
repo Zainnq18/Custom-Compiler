@@ -1,0 +1,144 @@
+======================================================================
+  COMPILER LISTING  :  test_program.pas
+======================================================================
+
+   1  |  ! Sample program in the Option-1 language
+   2  |  program factorial;
+   3  |  
+   4  |  var
+   5  |      n : integer;
+   6  |      result : integer;
+   7  |  
+   8  |  function computeFact(x : integer) : integer;
+   9  |  var
+  10  |      f : integer;
+  11  |  begin
+  12  |      if x <= 1 then
+  13  |          f := 1
+  14  |      else
+  15  |          f := x * computeFact(x - 1);
+  16  |      computeFact := f
+  17  |  end;
+  18  |  
+  19  |  begin
+  20  |      write('Enter a number: ');
+  21  |      read(n);
+  22  |      result := computeFact(n);
+  23  |      write('Factorial = ');
+  24  |      write(result)
+  25  |  end.
+
+======================================================================
+  Compilation SUCCESSFUL  –  No errors.
+======================================================================
+
+──── TOKEN LIST ────
+  Token(RESERVED, 'program', line=2)
+  Token(ID, 'factorial', line=2)
+  Token(DELIMITER, ';', line=2)
+  Token(RESERVED, 'var', line=4)
+  Token(ID, 'n', line=5)
+  Token(DELIMITER, ':', line=5)
+  Token(RESERVED, 'integer', line=5)
+  Token(DELIMITER, ';', line=5)
+  Token(ID, 'result', line=6)
+  Token(DELIMITER, ':', line=6)
+  Token(RESERVED, 'integer', line=6)
+  Token(DELIMITER, ';', line=6)
+  Token(RESERVED, 'function', line=8)
+  Token(ID, 'computeFact', line=8)
+  Token(DELIMITER, '(', line=8)
+  Token(ID, 'x', line=8)
+  Token(DELIMITER, ':', line=8)
+  Token(RESERVED, 'integer', line=8)
+  Token(DELIMITER, ')', line=8)
+  Token(DELIMITER, ':', line=8)
+  Token(RESERVED, 'integer', line=8)
+  Token(DELIMITER, ';', line=8)
+  Token(RESERVED, 'var', line=9)
+  Token(ID, 'f', line=10)
+  Token(DELIMITER, ':', line=10)
+  Token(RESERVED, 'integer', line=10)
+  Token(DELIMITER, ';', line=10)
+  Token(RESERVED, 'begin', line=11)
+  Token(RESERVED, 'if', line=12)
+  Token(ID, 'x', line=12)
+  Token(RELOP, '<=', line=12)
+  Token(INTEGER, 1, line=12)
+  Token(RESERVED, 'then', line=12)
+  Token(ID, 'f', line=13)
+  Token(ASSIGNOP, ':=', line=13)
+  Token(INTEGER, 1, line=13)
+  Token(RESERVED, 'else', line=14)
+  Token(ID, 'f', line=15)
+  Token(ASSIGNOP, ':=', line=15)
+  Token(ID, 'x', line=15)
+  Token(MULOP, '*', line=15)
+  Token(ID, 'computeFact', line=15)
+  Token(DELIMITER, '(', line=15)
+  Token(ID, 'x', line=15)
+  Token(ADDOP, '-', line=15)
+  Token(INTEGER, 1, line=15)
+  Token(DELIMITER, ')', line=15)
+  Token(DELIMITER, ';', line=15)
+  Token(ID, 'computeFact', line=16)
+  Token(ASSIGNOP, ':=', line=16)
+  Token(ID, 'f', line=16)
+  Token(RESERVED, 'end', line=17)
+  Token(DELIMITER, ';', line=17)
+  Token(RESERVED, 'begin', line=19)
+  Token(RESERVED, 'write', line=20)
+  Token(DELIMITER, '(', line=20)
+  Token(STRING, 'Enter a number: ', line=20)
+  Token(DELIMITER, ')', line=20)
+  Token(DELIMITER, ';', line=20)
+  Token(RESERVED, 'read', line=21)
+  Token(DELIMITER, '(', line=21)
+  Token(ID, 'n', line=21)
+  Token(DELIMITER, ')', line=21)
+  Token(DELIMITER, ';', line=21)
+  Token(ID, 'result', line=22)
+  Token(ASSIGNOP, ':=', line=22)
+  Token(ID, 'computeFact', line=22)
+  Token(DELIMITER, '(', line=22)
+  Token(ID, 'n', line=22)
+  Token(DELIMITER, ')', line=22)
+  Token(DELIMITER, ';', line=22)
+  Token(RESERVED, 'write', line=23)
+  Token(DELIMITER, '(', line=23)
+  Token(STRING, 'Factorial = ', line=23)
+  Token(DELIMITER, ')', line=23)
+  Token(DELIMITER, ';', line=23)
+  Token(RESERVED, 'write', line=24)
+  Token(DELIMITER, '(', line=24)
+  Token(ID, 'result', line=24)
+  Token(DELIMITER, ')', line=24)
+  Token(RESERVED, 'end', line=25)
+  Token(DELIMITER, '.', line=25)
+  Token(EOF, 'EOF', line=26)
+
+──── INTERMEDIATE CODE (TAC) ────
+program_factorial:
+func_computeFact:
+    t1 = x <= 1
+    IFFALSE t1 GOTO L1
+    f = 1
+    GOTO L2
+L1:
+    t2 = x - 1
+    PARAM t2
+    t3 = CALL computeFact, 1
+    t4 = x * t3
+    f = t4
+L2:
+    computeFact = f
+    RETURN computeFact
+main:
+    WRITE 'Enter a number: '
+    READ n
+    PARAM n
+    t5 = CALL computeFact, 1
+    result = t5
+    WRITE 'Factorial = '
+    WRITE result
+    RETURN 

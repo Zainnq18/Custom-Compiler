@@ -1,0 +1,79 @@
+======================================================================
+  COMPILER LISTING  :  Findmax.pas
+======================================================================
+
+   1  |  ! Find the maximum of two numbers
+   2  |  program findMax;
+   3  |  
+   4  |  var
+   5  |      a : integer;
+   6  |      b : integer;
+   7  |  
+   8  |  begin
+   9  |      read(a);
+  10  |      read(b);
+  11  |      if a > b then
+  12  |          write(a)
+  13  |      else
+  14  |          write(b)
+  15  |  end.
+
+======================================================================
+  Compilation SUCCESSFUL  –  No errors.
+======================================================================
+
+──── TOKEN LIST ────
+  Token(RESERVED, 'program', line=2)
+  Token(ID, 'findMax', line=2)
+  Token(DELIMITER, ';', line=2)
+  Token(RESERVED, 'var', line=4)
+  Token(ID, 'a', line=5)
+  Token(DELIMITER, ':', line=5)
+  Token(RESERVED, 'integer', line=5)
+  Token(DELIMITER, ';', line=5)
+  Token(ID, 'b', line=6)
+  Token(DELIMITER, ':', line=6)
+  Token(RESERVED, 'integer', line=6)
+  Token(DELIMITER, ';', line=6)
+  Token(RESERVED, 'begin', line=8)
+  Token(RESERVED, 'read', line=9)
+  Token(DELIMITER, '(', line=9)
+  Token(ID, 'a', line=9)
+  Token(DELIMITER, ')', line=9)
+  Token(DELIMITER, ';', line=9)
+  Token(RESERVED, 'read', line=10)
+  Token(DELIMITER, '(', line=10)
+  Token(ID, 'b', line=10)
+  Token(DELIMITER, ')', line=10)
+  Token(DELIMITER, ';', line=10)
+  Token(RESERVED, 'if', line=11)
+  Token(ID, 'a', line=11)
+  Token(RELOP, '>', line=11)
+  Token(ID, 'b', line=11)
+  Token(RESERVED, 'then', line=11)
+  Token(RESERVED, 'write', line=12)
+  Token(DELIMITER, '(', line=12)
+  Token(ID, 'a', line=12)
+  Token(DELIMITER, ')', line=12)
+  Token(RESERVED, 'else', line=13)
+  Token(RESERVED, 'write', line=14)
+  Token(DELIMITER, '(', line=14)
+  Token(ID, 'b', line=14)
+  Token(DELIMITER, ')', line=14)
+  Token(RESERVED, 'end', line=15)
+  Token(DELIMITER, '.', line=15)
+  Token(EOF, 'EOF', line=16)
+
+──── INTERMEDIATE CODE (TAC) ────
+program_findMax:
+main:
+    READ a
+    READ b
+    t1 = a > b
+    IFFALSE t1 GOTO L1
+    WRITE a
+    GOTO L2
+L1:
+    WRITE b
+L2:
+    RETURN 
